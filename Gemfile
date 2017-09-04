@@ -52,9 +52,10 @@ group :development do
 end
 
 group :test do
-  gem 'minitest-reporters'
-  gem 'mini_backtrace'
+  gem 'guard'
   gem 'guard-minitest'
+  gem 'mini_backtrace'
+  gem 'minitest-reporters'
 end
 
 group :production do
