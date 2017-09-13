@@ -9,6 +9,8 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 
+gem 'bcrypt'
+
 gem 'bootstrap-sass'
 
 gem 'rails-controller-testing'
