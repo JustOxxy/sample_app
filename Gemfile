@@ -15,6 +15,8 @@ gem 'bootstrap-sass'
 
 gem 'rails-controller-testing'
 
+gem 'jquery-rails'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
