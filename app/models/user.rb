@@ -11,19 +11,21 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }, allow_nil: true
 
-  # Возвращает дайджест для указанной строки.
-  def User.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ?
-             BCrypt::Engine::MIN_COST :
-             BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
-  end
+  class << self
+    # Возвращает дайджест для указанной строки.
+    def digest(string)
+      cost = ActiveModel::SecurePassword.min_cost ?
+               BCrypt::Engine::MIN_COST :
+               BCrypt::Engine.cost
+      BCrypt::Password.create(string, cost: cost)
+    end
 
-  # Возвращает случайный токен.
-  def User.new_token
-    SecureRandom.urlsafe_base64
+    # Возвращает случайный токен.
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
   end
 
   # Запоминает пользователя в базе данных для использования в постоянных сеансах.
