@@ -21,6 +21,7 @@ class PasswordResetsController < ApplicationController
   end
 
   def edit
+    printf 'Hello'
   end
 
   def update
